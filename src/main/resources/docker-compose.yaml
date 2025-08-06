@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:14.3
+    container_name: cinemamille
+    environment:
+      POSTGRES_DB: cinemamille
+      POSTGRES_USER: faber
+      POSTGRES_PASSWORD: passwd
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
